@@ -1,0 +1,28 @@
+import { StyleSheet} from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+
+import Comandos from './Components/Comandos';
+import ItemComando from './Components/ItemComando';
+import DetalhesComandos from './Components/DetalhesComandos';
+
+const Stack = createNativeStackNavigator();
+export default function App() {
+  return (
+    <NavigationContainer style={styles.container}>
+      <Stack.Navigator>
+        <Stack.Screen name = "Home" component = { Comandos } />
+        <Stack.Screen name = "ItemComandos" component = { ItemComando } />
+        <Stack.Screen name = "DetalhesComandos" component = { DetalhesComandos } />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
